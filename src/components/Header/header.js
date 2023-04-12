@@ -1,12 +1,13 @@
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Header.css";
 import React from 'react'
 
-const   Header = () => {
+const Header = () => {
   return (
-    <div>
-      <Link to="/">
-      Intutive quiz hub
+    <div className="header">
+      <Link to="/" className="title">
+        Intuitive quiz hub
+        <hr className="divider" />
       </Link>
     </div>
   )
