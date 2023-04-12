@@ -5,7 +5,9 @@ import React from 'react'
 const   Header = () => {
   return (
     <div>
-      
+      <Link to="/">
+      Intutive quiz hub
+      </Link>
     </div>
   )
 }
