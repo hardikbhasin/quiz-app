@@ -1,5 +1,6 @@
 import React from 'react'
 import { MenuItem, TextField } from '@material-ui/core'
+import Categories from "../../Data/Categories"
 import "./Home.css"
 
 const Home = () => {
@@ -8,13 +9,20 @@ const Home = () => {
             <div className='settings'>
                 <span style={{ fontSize: 30 }}>Quiz settings</span>
                 <div className='settings_select'>
-                    <TextField style={{marginBottom:25}}label='Enter your name' variant='outlined'></TextField>
-                    <TextField select label='Select category' variant='outlined' style={{marginBottom:30}}>
-                        
-                        <MenuItem>
-                        </MenuItem>
+                    <TextField style={{ marginBottom: 25 }} label='Enter your name' variant='outlined'></TextField>
+                    <TextField select label='Select category' variant='outlined' style={{ marginBottom: 30 }}>
+                        {
+                            Categories.map((cat) => (
+                                <MenuItem key={cat.category} value={cat.value}>
+                                    {cat.category}
+            
+                                </MenuItem>
+
+                            ))
+                        }
+
                     </TextField>
-                    
+
 
                 </div>
             </div>
