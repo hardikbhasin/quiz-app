@@ -10,6 +10,9 @@ import { useState } from "react";
 
 function App() {
   const [name, setName] = useState("");
+  const fetchQuestions =() => {
+
+  };
   return (
     <BrowserRouter>
       <div className="app"
@@ -17,7 +20,7 @@ function App() {
         <Header />
         <Switch>
           <Route path='/' exact>
-            <Home name={name} setName={setName}/>
+            <Home name={name} setName={setName} fetchQuestions={fetchQuestions}/>
           </Route>
           <Route path='/quiz' exact>
             <Quiz />
