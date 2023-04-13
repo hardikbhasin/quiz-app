@@ -3,20 +3,35 @@ import { Button, MenuItem, TextField } from '@material-ui/core'
 import Categories from "../../Data/Categories"
 import "./Home.css"
 import { useState } from 'react'
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
+import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 
-const Home = ({name, setName}) => {
+const Home = ({ name, setName,fetchQuestions }) => {
     const [category, setCategory] = useState("");
     const [difficulty, setDifficulty] = useState("");
-    
+    const [error, setError] = useState(false);
+     const history = useHistory();
+    const handelSubmit = () => { 
+        if(!category || !difficulty || !name){
+            setError(true)
+            return;
+        }
+        else{
+            setError(false)
+            fetchQuestions(category,difficulty);
+            history.pushState('/quiz');
+        }
+    };
     return (
         <div className='content'>
             <div className='settings'>
                 <span style={{ fontSize: 30 }}>Quiz settings</span>
                 <div className='settings_select'>
+                    {error && <ErrorMessage>Please fill all the fields</ErrorMessage>}
                     <TextField style={{ marginBottom: 25 }} label='Enter your name' variant='outlined'
-                    onChange={(e) => setName(e.target.value)}></TextField>
+                        onChange={(e) => setName(e.target.value)}></TextField>
                     <TextField select label='Select category' variant='outlined' style={{ marginBottom: 30 }}
-                    onChange={(e) => setCategory(e.target.value)} value={category}>
+                        onChange={(e) => setCategory(e.target.value)} value={category}>
                         {
                             Categories.map((cat) => (
                                 <MenuItem key={cat.category} value={cat.value}>
