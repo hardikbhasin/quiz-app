@@ -1,5 +1,5 @@
 import React from 'react'
-import { MenuItem, TextField } from '@material-ui/core'
+import { Button, MenuItem, TextField } from '@material-ui/core'
 import Categories from "../../Data/Categories"
 import "./Home.css"
 
@@ -15,13 +15,32 @@ const Home = () => {
                             Categories.map((cat) => (
                                 <MenuItem key={cat.category} value={cat.value}>
                                     {cat.category}
-            
+
                                 </MenuItem>
 
                             ))
                         }
 
                     </TextField>
+                    <TextField
+                        select
+                        label="Select Difficulty"
+                        variant="outlined"
+                        style={{ marginBottom: 30 }}
+                    >
+                        <MenuItem key="Easy" value="easy">
+                            Easy
+                        </MenuItem>
+                        <MenuItem key="Medium" value="medium">
+                            Medium
+                        </MenuItem>
+                        <MenuItem key="Hard" value="hard">
+                            Hard
+                        </MenuItem>
+                    </TextField>
+                    <Button variant='contained' color='primary' size='large'>
+                        Start Quiz
+                    </Button>
 
 
                 </div>
