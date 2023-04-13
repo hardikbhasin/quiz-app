@@ -2,15 +2,21 @@ import React from 'react'
 import { Button, MenuItem, TextField } from '@material-ui/core'
 import Categories from "../../Data/Categories"
 import "./Home.css"
+import { useState } from 'react'
 
-const Home = () => {
+const Home = ({name, setName}) => {
+    const [category, setCategory] = useState("");
+    const [difficulty, setDifficulty] = useState("");
+    
     return (
         <div className='content'>
             <div className='settings'>
                 <span style={{ fontSize: 30 }}>Quiz settings</span>
                 <div className='settings_select'>
-                    <TextField style={{ marginBottom: 25 }} label='Enter your name' variant='outlined'></TextField>
-                    <TextField select label='Select category' variant='outlined' style={{ marginBottom: 30 }}>
+                    <TextField style={{ marginBottom: 25 }} label='Enter your name' variant='outlined'
+                    onChange={(e) => setName(e.target.value)}></TextField>
+                    <TextField select label='Select category' variant='outlined' style={{ marginBottom: 30 }}
+                    onChange={(e) => setCategory(e.target.value)} value={category}>
                         {
                             Categories.map((cat) => (
                                 <MenuItem key={cat.category} value={cat.value}>
@@ -27,6 +33,7 @@ const Home = () => {
                         label="Select Difficulty"
                         variant="outlined"
                         style={{ marginBottom: 30 }}
+                        onChange={(e) => setDifficulty(e.target.value)} value={difficulty}
                     >
                         <MenuItem key="Easy" value="easy">
                             Easy
@@ -38,7 +45,7 @@ const Home = () => {
                             Hard
                         </MenuItem>
                     </TextField>
-                    <Button variant='contained' color='primary' size='large'>
+                    <Button variant='contained' color='primary' size='large' onClick={handelSubmit}>
                         Start Quiz
                     </Button>
 
