@@ -6,8 +6,10 @@ import Footer from "./components/Footer/Footer";
 import Home from "./Pages/Home/Home";
 import Quiz from "./Pages/Quiz/Quiz";
 import Result from "./Pages/Result/Result";
+import { useState } from "react";
 
 function App() {
+  const [name, setName] = useState("");
   return (
     <BrowserRouter>
       <div className="app"
@@ -15,7 +17,7 @@ function App() {
         <Header />
         <Switch>
           <Route path='/' exact>
-            <Home />
+            <Home name={name} setName={setName}/>
           </Route>
           <Route path='/quiz' exact>
             <Quiz />
