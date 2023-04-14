@@ -19,7 +19,7 @@ function App() {
         category && `&category=${category}`
       }${difficulty && `&difficulty=${difficulty}`}&type=multiple`
     );
-   console.log(data);
+   setQuestions(data.results);
   };
   return (
     <BrowserRouter>
