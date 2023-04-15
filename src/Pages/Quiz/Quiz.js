@@ -12,7 +12,7 @@ const Quiz = ({ name, score, questions, setQuestions, setScore }) => {
     console.log(questions);
     setOptions(questions && handelShuffle([
       questions[currQues]?.correct_answer,
-      ...questions[currQues]?.incorrect_answers
+      ...questions[currQues]?.incorrect_answers //spread operator as there are 3 incorrect options while 1 is correct
     ])
     );
 
