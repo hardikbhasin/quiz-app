@@ -31,6 +31,7 @@ const Quiz = ({ name, score, questions, setQuestions, setScore }) => {
       </span>
       {questions ? (<>Questions</>) :
         (
+          // loader till then questions will be fetched from api
           <CircularProgress 
             style={{ margin: 100 }}
             color='inherit'
