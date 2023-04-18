@@ -12,4 +12,10 @@
     padding: 5px 10px;
   }
   
-  
+  .quizInfo {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    margin: 10px;
+  }
