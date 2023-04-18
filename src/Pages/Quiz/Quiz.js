@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { CircularProgress } from '@material-ui/core'
+import './Quiz.css';
 
 const Quiz = ({ name, score, questions, setQuestions, setScore }) => {
   const [options, setOptions] = useState()
@@ -26,7 +27,7 @@ const Quiz = ({ name, score, questions, setQuestions, setScore }) => {
 
 
   return (
-    <div>
+    <div className='quiz'>
       <span className='subtitle'>
         Welcome, {name}
       </span>
