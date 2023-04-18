@@ -31,16 +31,28 @@ const Quiz = ({ name, score, questions, setQuestions, setScore }) => {
       <span className='subtitle'>
         Welcome, {name}
       </span>
-      {questions ? (<>Questions</>) :
+      {questions ? (
+        <>
+          <div className="quizInfo">
+            <span>{questions[currQues].category}</span>
+            <span>
+              Score : {score}
+            </span>
+          </div>
+
+
+
+        </>
+      ) :
         (
           // loader till then questions will be fetched from api
-          <CircularProgress 
+          <CircularProgress
             style={{ margin: 100 }}
             color='inherit'
             size={150}
-            thickness={1} 
-            />
-          )}
+            thickness={1}
+          />
+        )}
 
 
     </div>
