@@ -11,7 +11,28 @@ const Question = ({ currQues,
   score,
   setQuestions }) => {
   const [selected, setSelected] = useState();
-  const [error, setEror] = useState(false);
+  const [error, setError] = useState(false);
+  const handelSelect=(i)=>{
+    if(selected===i && selected===correct){
+      return 'select';
+    }
+    else if(selected === i && selected !== correct){
+      return 'wrong';
+    }
+    else if(i===correct){
+      return 'select';
+      
+
+    }
+    
+  };
+  const handelCheck=(i) =>{
+    setSelected(i);
+    if (i === correct) setScore(score + 1);
+    setError(false);
+
+
+  };
 
 
 
@@ -21,14 +42,26 @@ const Question = ({ currQues,
       <div className='singleQuestion'>
         <h2>{questions[currQues].question}</h2>
         <div className='options'>
-        {error && <ErrorMessage>{error}</ErrorMessage>}
-        {
-          options && 
-          options.map(i =>(
-            <button>{i}</button>
+          {error && <ErrorMessage>{error}</ErrorMessage>}
+          {
+            options &&
+            options.map(i => (
+              <button onClick={()=>handelCheck(i)}
+                className={`singleOption ${selected && handelSelect(i)}`}
+                key={i}
+                disabled={selected}
 
-          ))
-        }
+
+
+
+
+
+
+
+              >{i}</button>
+
+            ))
+          }
 
         </div>
 
