@@ -39,7 +39,18 @@ const Quiz = ({ name, score, questions, setQuestions, setScore }) => {
               Score : {score}
             </span>
           </div>
-           <Question />
+          <Question
+            currQues={currQues}
+            setCurrQues={setCurrQues}
+            questions={questions}
+            options={options}
+            correct={questions[currQues]?.correct_answer}
+            score={score}
+            setScore={setScore}
+            setQuestions={setQuestions}
+
+
+          />
 
 
         </>
