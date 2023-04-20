@@ -3,6 +3,7 @@ import { useState } from 'react'
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import "./Question.css";
 import { Button } from "@material-ui/core";
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 const Question = ({ currQues,
   setCurrQues,
   questions,
@@ -34,7 +35,24 @@ const Question = ({ currQues,
 
 
   };
+  const history = useHistory();
+  const handelNext = () => {
+    if (currQues > 8) {
+      history.push('/result')
+    }
+    else if (selected) {
+      setCurrQues(currQues + 1);
+      setSelected()
 
+    }
+    else {
+      setError("Please select an option first");
+    }
+  };
+  const handelQuit = () => {
+    
+
+  };
 
 
   return (
@@ -64,7 +82,10 @@ const Question = ({ currQues,
             color="secondary"
             size="large"
             style={{ width: 185 }}
-            href="/">
+            href="/"
+            onClick={handelQuit}
+          >
+
             Quit
           </Button>
           <Button
@@ -72,6 +93,7 @@ const Question = ({ currQues,
             color="primary"
             size="large"
             style={{ width: 185 }}
+            onClick={handelNext}
           >
             Next Question
           </Button>
