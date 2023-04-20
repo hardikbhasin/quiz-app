@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
+import "./Question.css";
 
 const Question = ({ currQues,
   setCurrQues,
