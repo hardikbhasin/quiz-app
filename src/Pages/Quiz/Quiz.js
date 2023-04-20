@@ -17,7 +17,7 @@ const Quiz = ({ name, score, questions, setQuestions, setScore }) => {
     ])
     );
 
-  }, [questions]);
+  }, [questions, currQues]);
   console.log(options);
   // to shuffle the options
   const handelShuffle = (optionss) => {
