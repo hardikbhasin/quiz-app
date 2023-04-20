@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import "./Question.css";
-
+import { Button } from "@material-ui/core";
 const Question = ({ currQues,
   setCurrQues,
   questions,
@@ -13,21 +13,21 @@ const Question = ({ currQues,
   setQuestions }) => {
   const [selected, setSelected] = useState();
   const [error, setError] = useState(false);
-  const handelSelect=(i)=>{
-    if(selected===i && selected===correct){
+  const handelSelect = (i) => {
+    if (selected === i && selected === correct) {
       return 'select';
     }
-    else if(selected === i && selected !== correct){
+    else if (selected === i && selected !== correct) {
       return 'wrong';
     }
-    else if(i===correct){
+    else if (i === correct) {
       return 'select';
-      
+
 
     }
-    
+
   };
-  const handelCheck=(i) =>{
+  const handelCheck = (i) => {
     setSelected(i);
     if (i === correct) setScore(score + 1);
     setError(false);
@@ -47,18 +47,10 @@ const Question = ({ currQues,
           {
             options &&
             options.map(i => (
-              <button onClick={()=>handelCheck(i)}
+              <button onClick={() => handelCheck(i)}
                 className={`singleOption ${selected && handelSelect(i)}`}
                 key={i}
                 disabled={selected}
-
-
-
-
-
-
-
-
               >{i}</button>
 
             ))
@@ -66,10 +58,26 @@ const Question = ({ currQues,
 
         </div>
 
+        <div className='controls'>
+          <Button
+            variant="contained"
+            color="secondary"
+            size="large"
+            style={{ width: 185 }}
+            href="/">
+            Quit
+          </Button>
+          <Button
+            variant="contained"
+            color="primary"
+            size="large"
+            style={{ width: 185 }}
+          >
+            Next Question
+          </Button>
 
+        </div>
       </div>
-
-
     </div>
 
   )
