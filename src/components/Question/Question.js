@@ -37,14 +37,19 @@ const Question = ({ currQues,
   };
   const history = useHistory();
   const handelNext = () => {
+    
+    /* if the question no is greater than 8, then the quiz will be over and move to the result page
+     as indexing is from zero so handeled using no "8"*/
     if (currQues > 8) {
       history.push('/result')
     }
+    // if option is selected then setSelected is used to store the selected option
     else if (selected) {
       setCurrQues(currQues + 1);
       setSelected()
 
     }
+    // else error to be displayed in case no option is selected and we are clicking next question
     else {
       setError("Please select an option first");
     }
