@@ -5,10 +5,6 @@ import Question from "../../components/Question/Question";
 const Quiz = ({ name, score, questions, setQuestions, setScore }) => {
   const [options, setOptions] = useState()
   const [currQues, setCurrQues] = useState(0)
-
-
-
-
   useEffect(() => {
     console.log(questions);
     setOptions(questions && handelShuffle([
@@ -23,9 +19,6 @@ const Quiz = ({ name, score, questions, setQuestions, setScore }) => {
   const handelShuffle = (optionss) => {
     return optionss.sort(() => Math.random() - 0.5);
   }
-
-
-
   return (
     <div className='quiz'>
       <span className='subtitle'>
@@ -57,6 +50,7 @@ const Quiz = ({ name, score, questions, setQuestions, setScore }) => {
       ) :
         (
           // loader till then questions will be fetched from api
+          
           <CircularProgress
             style={{ margin: 100 }}
             color='inherit'
