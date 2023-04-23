@@ -40,7 +40,7 @@ const Quiz = ({ name, score, questions, setQuestions, setScore }) => {
             correct={questions[currQues]?.correct_answer}
             score={score}
             setScore={setScore}
-            setQuestions={setQuestions}
+
 
 
           />
@@ -50,7 +50,7 @@ const Quiz = ({ name, score, questions, setQuestions, setScore }) => {
       ) :
         (
           // loader till then questions will be fetched from api
-          
+
           <CircularProgress
             style={{ margin: 100 }}
             color='inherit'
