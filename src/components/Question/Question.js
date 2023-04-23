@@ -11,7 +11,7 @@ const Question = ({ currQues,
   correct,
   setScore,
   score,
-  setQuestions }) => {
+  }) => {
   const [selected, setSelected] = useState();
   const [error, setError] = useState(false);
   const handelSelect = (i) => {
