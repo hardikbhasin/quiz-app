@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { Button } from "@material-ui/core";
+import './Result.css'
 
 const Result = ({ name, score }) => {
   const history = useHistory();
@@ -24,7 +25,7 @@ const Result = ({ name, score }) => {
 
 
         >
-          
+          Go to Home Page
         </Button>
 
       </span>
