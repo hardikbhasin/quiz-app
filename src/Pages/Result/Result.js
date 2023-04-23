@@ -16,19 +16,20 @@ const Result = ({ name, score }) => {
     <div className='result'>
       <span className='title'>
         Final score : {score}
-        <Button
-          variant="contained"
-          color="secondary"
-          size="large"
-          style={{ alignSelf: "center", marginTop: 20 }}
-          href="/"
-
-
-        >
-          Go to Home Page
-        </Button>
-
       </span>
+      <Button
+        variant="contained"
+        color="secondary"
+        size="large"
+        style={{ alignSelf: "center", marginTop: 20 }}
+        href="/"
+
+
+      >
+        Go to Home Page
+      </Button>
+
+
 
 
 
