@@ -29,10 +29,6 @@ const Result = ({ name, score }) => {
         Go to Home Page
       </Button>
 
-
-
-
-
     </div>
   )
 }
