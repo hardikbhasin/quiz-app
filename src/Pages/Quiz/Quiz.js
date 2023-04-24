@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { CircularProgress } from '@material-ui/core'
 import './Quiz.css';
 import Question from "../../components/Question/Question";
-const Quiz = ({ name, score, questions, setQuestions, setScore }) => {
+const Quiz = ({ name, score, questions, setScore }) => {
   const [options, setOptions] = useState()
   const [currQues, setCurrQues] = useState(0)
   useEffect(() => {
