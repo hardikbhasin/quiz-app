@@ -1,6 +1,6 @@
 # About
 This app is purely built using React and provides a classic interface for user to take quiz in 22 sub categories with three level of questions : Easy, Medium and Hard. The questions are fetched from Trivia API and the final score is displayed in final result page. React DOM is used to switch between the pages and Material UI is used (in react) for UI/design and various other elements. 
-# Trivia API
+# Trivia API (API USED TO FETCH QUESTIONS)
 https://opentdb.com/api.php?amount=20&category=${9 to 32}&difficulty=${ easy or medium or hard }&type=multiple
 This format is used to fetch the questions from API.
 # Screenshots
