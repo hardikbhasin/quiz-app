@@ -87,7 +87,7 @@ const Question = ({ currQues,
             color="secondary"
             size="large"
             style={{ width: 185 }}
-            href="/"
+           
             onClick={handelQuit}
           >
 
