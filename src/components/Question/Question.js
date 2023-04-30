@@ -55,7 +55,7 @@ const Question = ({ currQues,
     }
   };
   const handelQuit = () => {
-    
+    history.push('/result')
 
   };
 
